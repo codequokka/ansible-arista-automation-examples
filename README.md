@@ -21,32 +21,46 @@ ceos         4.29.0.2F   5523992a8863   13 seconds ago   2.04GB
 ```
 
 ```
-$ docker-compose up -d
+$ docker-compose -f docker/docker-compose/env1/docker-compose.yml up -d
 [+] Running 7/7
- ⠿ Network ansible-arista-automation-examples_net13      Created 0.1s
- ⠿ Network ansible-arista-automation-examples_net23      Created 0.1s
- ⠿ Network ansible-arista-automation-examples_mgmt       Created 0.0s
- ⠿ Network ansible-arista-automation-examples_net12      Created 0.0s
- ⠿ Container ansible-arista-automation-examples-ceos1-1  Started 1.1s
- ⠿ Container ansible-arista-automation-examples-ceos2-1  Started 2.0s
- ⠿ Container ansible-arista-automation-examples-ceos3-1  Started 1.3s
+ ⠿ Network env1_mgmt       Created  0.0s
+ ⠿ Network env1_net12      Created  0.1s
+ ⠿ Network env1_net23      Created  0.1s
+ ⠿ Network env1_net13      Created  0.1s
+ ⠿ Container env1-ceos3-1  Started  2.1s
+ ⠿ Container env1-ceos1-1  Started  1.9s
+ ⠿ Container env1-ceos2-1  Started  1.7s
 
-$ docker-compose ps
-NAME                                         COMMAND                  SERVICE             STATUS              PORTS
-ansible-arista-automation-examples-ceos1-1   "/sbin/init systemd.…"   ceos1               running             0.0.0.0:10122->22/tcp, :::10122->22/tcp
-ansible-arista-automation-examples-ceos2-1   "/sbin/init systemd.…"   ceos2               running             0.0.0.0:10222->22/tcp, :::10222->22/tcp
-ansible-arista-automation-examples-ceos3-1   "/sbin/init systemd.…"   ceos3               running             0.0.0.0:10322->22/tcp, :::10322->22/tcp
+$ docker-compose -f docker/docker-compose/env2/docker-compose.yml up -d
+[+] Running 7/7
+ ⠿ Network env2_net23      Created  0.0s
+ ⠿ Network env2_net13      Created  0.1s
+ ⠿ Network env2_mgmt       Created  0.1s
+ ⠿ Network env2_net12      Created  0.1s
+ ⠿ Container env2-ceos4-1  Started  1.5s
+ ⠿ Container env2-ceos6-1  Started  1.7s
+ ⠿ Container env2-ceos5-1  Started  1.2s
+
+$ docker-compose ls
+NAME                STATUS              CONFIG FILES
+env1                running(3)          /home/nbchk/work/github.com/codequokka/ansible-arista-automation-examples/docker/docker-compose/env1/docker-compose.yml
+env2                running(3)          /home/nbchk/work/github.com/codequokka/ansible-arista-automation-examples/docker/docker-compose/env2/docker-compose.yml
 ```
 
 ```
-$ docker-compose exec ceos1 Cli
-ceos1>enable
-ceos1#config
-ceos1(config)#username admin secret arista
-ceos1(config)#write memory 
+$ util/sh/set_admin_password.sh    
+#write memory
 Copy completed successfully.
-ceos1(config)#exit
-ceos1#exit
+#write memory
+Copy completed successfully.
+#write memory
+Copy completed successfully.
+#write memory
+Copy completed successfully.
+#write memory
+Copy completed successfully.
+#write memory
+Copy completed successfully.
 ```
 
 ```

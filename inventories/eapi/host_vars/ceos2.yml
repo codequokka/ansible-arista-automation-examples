@@ -1,2 +1,2 @@
 ---
-ansible_httpapi_port: 10280
+ansible_httpapi_port: 12080
