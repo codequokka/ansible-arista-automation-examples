@@ -2,6 +2,16 @@ ansible-arista-automation-examples
 ==================================
 
 ```
+     e1 +-----+ e2
+   +----+ceos1+----+
+   |    +-----+    |
+   | e1         e1 |
++--+--+         +--+--+
+|ceos2+---------+ceos3|
++-----+ e2   e2 +-----+
+```
+
+```
 $ docker import ./images/cEOS64-lab-4.29.0.2F.tar.xz ceos:4.29.0.2F
 sha256:5523992a88637ee3a93ec5c7278ab48871bd45cbc7b53f8c443dafadec6dc8c3
 
@@ -31,7 +41,6 @@ ansible-arista-automation-examples-ceos3-1   "/sbin/init systemd.…"   ceos3   
 ```
 $ docker-compose exec ceos1 Cli
 ceos1>enable
-ceos1#zerotouch disable 
 ceos1#config
 ceos1(config)#username admin secret arista
 ceos1(config)#write memory 
