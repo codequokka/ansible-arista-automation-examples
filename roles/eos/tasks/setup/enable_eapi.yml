@@ -1,0 +1,5 @@
+---
+- name: Enable eAPI
+  eos_eapi:
+    enable_http: yes
+    enable_https: yes
