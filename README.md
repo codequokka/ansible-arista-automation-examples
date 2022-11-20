@@ -2,7 +2,7 @@ ansible-arista-automation-examples
 ==================================
 
 ```
-$ docker import ./images/cEOS64-lab-4.29.0.2F.tar ceos:4.29.0.2F
+$ docker import ./images/cEOS64-lab-4.29.0.2F.tar.xz ceos:4.29.0.2F
 sha256:5523992a88637ee3a93ec5c7278ab48871bd45cbc7b53f8c443dafadec6dc8c3
 
 $ docker images ceos
