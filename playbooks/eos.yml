@@ -1,13 +1,6 @@
 ---
-- name:
+- name: Setup the EOS appliances
   hosts: eos
   gather_facts: no
-  tasks:
-    - name: Execute show version
-      arista.eos.eos_command:
-        commands: show version
-      register: _eos_command_result
-
-    - name: Show results
-      ansible.builtin.debug:
-        msg: "{{ _eos_command_result }}"
+  roles:
+    - eos

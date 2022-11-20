@@ -52,5 +52,5 @@ ceos1#exit
 ```
 $ pipenv install
 $ pipenv shell
-$ ansible-playbook -i inventories/development/hosts.ini playbooks/eos.yml
+$ ansible-playbook -i inventories/cli/hosts.ini playbooks/eos.yml --tags=setup
 ```

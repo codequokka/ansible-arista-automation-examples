@@ -21,6 +21,8 @@ services:
       container: docker 
     ports:
       - "10122:22"
+      - "10180:80"
+      - "11443:443"
     networks:
       mgmt:
       net12:
@@ -46,6 +48,8 @@ services:
       container: docker
     ports:
       - "10222:22"
+      - "10280:80"
+      - "12443:443"
     networks:
       mgmt:
       net12:
