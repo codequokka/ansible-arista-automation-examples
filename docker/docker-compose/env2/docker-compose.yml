@@ -1,0 +1,88 @@
+version: '3'
+services:
+  ceos4:
+    hostname: ceos4
+    image: "ceos:4.29.0.2F"
+    command: | 
+      /sbin/init \
+        systemd.setenv=INTFTYPE=eth \
+        systemd.setenv=ETBA=1 \
+        systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT=1 \
+        systemd.setenv=CEOS=1 \
+        systemd.setenv=EOS_PLATFORM=ceoslab \
+        systemd.setenv=container=docker
+    privileged: true
+    environment:
+      INTFTYPE: eth
+      ETBA: 1
+      SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT: 1
+      CEOS: 1
+      EOS_PLATFORM: ceoslab
+      container: docker 
+    ports:
+      - "14022:22"
+      - "14080:80"
+      - "14443:443"
+    networks:
+      mgmt:
+      net12:
+      net13:
+  ceos5:
+    hostname: ceos5
+    image: "ceos:4.29.0.2F"
+    command: | 
+      /sbin/init \
+        systemd.setenv=INTFTYPE=eth \
+        systemd.setenv=ETBA=1 \
+        systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT=1 \
+        systemd.setenv=CEOS=1 \
+        systemd.setenv=EOS_PLATFORM=ceoslab \
+        systemd.setenv=container=docker
+    privileged: true
+    environment:
+      INTFTYPE: eth
+      ETBA: 1
+      SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT: 1
+      CEOS: 1
+      EOS_PLATFORM: ceoslab
+      container: docker
+    ports:
+      - "15022:22"
+      - "15080:80"
+      - "15443:443"
+    networks:
+      mgmt:
+      net12:
+      net23:
+  ceos6:
+    hostname: ceos6
+    image: "ceos:4.29.0.2F"
+    command: | 
+      /sbin/init \
+        systemd.setenv=INTFTYPE=eth \
+        systemd.setenv=ETBA=1 \
+        systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT=1 \
+        systemd.setenv=CEOS=1 \
+        systemd.setenv=EOS_PLATFORM=ceoslab \
+        systemd.setenv=container=docker
+    privileged: true
+    environment:
+      INTFTYPE: eth
+      ETBA: 1
+      SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT: 1
+      CEOS: 1
+      EOS_PLATFORM: ceoslab
+      container: docker
+    ports:
+      - "16022:22"
+      - "16080:80"
+      - "16443:443"
+    networks:
+      mgmt:
+      net13:
+      net23:
+networks:
+  mgmt:
+  net12:
+  net13:
+  net23:

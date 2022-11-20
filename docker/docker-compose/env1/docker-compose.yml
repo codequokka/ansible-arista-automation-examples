@@ -20,8 +20,8 @@ services:
       EOS_PLATFORM: ceoslab
       container: docker 
     ports:
-      - "10122:22"
-      - "10180:80"
+      - "11022:22"
+      - "11080:80"
       - "11443:443"
     networks:
       mgmt:
@@ -47,8 +47,8 @@ services:
       EOS_PLATFORM: ceoslab
       container: docker
     ports:
-      - "10222:22"
-      - "10280:80"
+      - "12022:22"
+      - "12080:80"
       - "12443:443"
     networks:
       mgmt:
@@ -74,7 +74,9 @@ services:
       EOS_PLATFORM: ceoslab
       container: docker
     ports:
-      - "10322:22"
+      - "13022:22"
+      - "13080:80"
+      - "13443:443"
     networks:
       mgmt:
       net13:
