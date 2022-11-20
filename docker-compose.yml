@@ -4,12 +4,13 @@ services:
     hostname: ceos1
     image: "ceos:4.29.0.2F"
     command: | 
-      /sbin/init  systemd.setenv=INTFTYPE=eth \
-                  systemd.setenv=ETBA=1 \
-                  systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT=1 \
-                  systemd.setenv=CEOS=1 \
-                  systemd.setenv=EOS_PLATFORM=ceoslab \
-                  systemd.setenv=container=docker
+      /sbin/init \
+        systemd.setenv=INTFTYPE=eth \
+        systemd.setenv=ETBA=1 \
+        systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT=1 \
+        systemd.setenv=CEOS=1 \
+        systemd.setenv=EOS_PLATFORM=ceoslab \
+        systemd.setenv=container=docker
     privileged: true
     environment:
       INTFTYPE: eth
@@ -28,12 +29,13 @@ services:
     hostname: ceos2
     image: "ceos:4.29.0.2F"
     command: | 
-      /sbin/init  systemd.setenv=INTFTYPE=eth \
-                  systemd.setenv=ETBA=1 \
-                  systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT=1 \
-                  systemd.setenv=CEOS=1 \
-                  systemd.setenv=EOS_PLATFORM=ceoslab \
-                  systemd.setenv=container=docker
+      /sbin/init \
+        systemd.setenv=INTFTYPE=eth \
+        systemd.setenv=ETBA=1 \
+        systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT=1 \
+        systemd.setenv=CEOS=1 \
+        systemd.setenv=EOS_PLATFORM=ceoslab \
+        systemd.setenv=container=docker
     privileged: true
     environment:
       INTFTYPE: eth
@@ -52,12 +54,13 @@ services:
     hostname: ceos3
     image: "ceos:4.29.0.2F"
     command: | 
-      /sbin/init  systemd.setenv=INTFTYPE=eth \
-                  systemd.setenv=ETBA=1 \
-                  systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT=1 \
-                  systemd.setenv=CEOS=1 \
-                  systemd.setenv=EOS_PLATFORM=ceoslab \
-                  systemd.setenv=container=docker
+      /sbin/init \
+        systemd.setenv=INTFTYPE=eth \
+        systemd.setenv=ETBA=1 \
+        systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_SYSDBINIT=1 \
+        systemd.setenv=CEOS=1 \
+        systemd.setenv=EOS_PLATFORM=ceoslab \
+        systemd.setenv=container=docker
     privileged: true
     environment:
       INTFTYPE: eth
