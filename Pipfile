@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 ansible = "*"
 ansible-pylibssh = "*"
+docker-topo = {git = "https://github.com/networkop/docker-topo.git"}
 
 [dev-packages]
 
